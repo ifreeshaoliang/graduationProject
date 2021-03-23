@@ -44,6 +44,11 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    public User queryUserByAccountPassword(String userAccount, String userPassword) {
+        return userMapper.queryUserByAccountPassword(userAccount, userPassword);
+    }
+
+    @Override
     public List<User> queryAllUser() {
         return userMapper.queryAllUser();
     }

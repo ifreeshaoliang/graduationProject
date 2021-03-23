@@ -24,6 +24,9 @@ public interface UserMapper {
     @Select("select * from user where userID=#{userID}")
     User queryUserByID(int id);
 
+    @Select("select * from user where userAccount=#{userAccount} and userPassword=#{userPassword}")
+    User queryUserByAccountPassword(String userAccount, String userPassword);
+
     @Select("select * from user")
     List<User> queryAllUser();
 }

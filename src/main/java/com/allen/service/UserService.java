@@ -9,5 +9,6 @@ public interface UserService {
     int deleteUser(int id);
     int updateUser(User user);
     User queryUserByID(int id);
+    User queryUserByAccountPassword(String userAccount, String userPassword);
     List<User> queryAllUser();
 }
