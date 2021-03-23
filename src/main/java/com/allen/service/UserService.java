@@ -11,4 +11,5 @@ public interface UserService {
     User queryUserByID(int id);
     User queryUserByAccountPassword(String userAccount, String userPassword);
     List<User> queryAllUser();
+
 }
