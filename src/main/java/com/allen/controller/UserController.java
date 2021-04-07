@@ -15,7 +15,6 @@ import java.util.List;
  * @author ifree
  */
 @CrossOrigin(origins = "http://localhost:8081", maxAge = 3600)
-//@CrossOrigin
 @RestController
 public class UserController {
     private UserServiceImpl userService;

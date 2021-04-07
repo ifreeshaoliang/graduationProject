@@ -16,9 +16,9 @@ public class UserDaoTest {
         final ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
         final UserService userServiceImpl = context.getBean("userServiceImpl", UserService.class);
 
-       final User user1 = new User(2,"梅十三", "meiabc", "123456", "女", 0);
+ //      final User user1 = new User(2,"梅十三", "meiabc", "123456", "女", 0);
 
-        userServiceImpl.addUser(user1);
+ //       userServiceImpl.addUser(user1);
 //        System.out.println(userServiceImpl.queryUserByID(2));
 //        userServiceImpl.updateUser(user1);
 //        userServiceImpl.deleteUser(2);

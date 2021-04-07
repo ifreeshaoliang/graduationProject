@@ -10,7 +10,18 @@
         http://www.springframework.org/schema/context
         https://www.springframework.org/schema/context/spring-context.xsd">
     <!-- 1.开启SpringMVC注解驱动 -->
-    <mvc:annotation-driven/>
+    <mvc:annotation-driven>
+        <!--  解决respond响应乱码问题      -->
+        <mvc:message-converters>
+            <bean class="org.springframework.http.converter.StringHttpMessageConverter">
+                <property name="supportedMediaTypes">
+                    <list>
+                        <value>application/json;charset=UTF-8</value>
+                    </list>
+                </property>
+            </bean>
+        </mvc:message-converters>
+    </mvc:annotation-driven>
     <!-- 2.静态资源默认servlet配置-->
     <mvc:default-servlet-handler/>
 
