@@ -6,7 +6,7 @@ import org.junit.Test;
  */
 public class ResultCodeTest {
     @Test
-    public static void main(String[] args) {
+    public void test() {
         ResultCode resultCode = ResultCode.FAIL;
         if ( resultCode.code() == 400) {
             System.out.println("yes");

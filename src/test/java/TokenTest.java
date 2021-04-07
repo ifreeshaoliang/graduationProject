@@ -8,7 +8,7 @@ import org.junit.Test;
  */
 public class TokenTest {
     @Test
-    public static void main(String[] args) throws Exception {
+    public void test() throws Exception {
         System.out.println(JWTUtil.getSecretKey());
         final String jwt = JWTUtil.createJWT("1", "username", JWTConstant.JWT_TIME_TO_LIVE_MILLIS);
         System.out.println(jwt);

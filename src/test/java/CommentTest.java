@@ -9,7 +9,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
  */
 public class CommentTest {
     @Test
-    public static void main(String[] args) {
+    public void test() {
         final ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
         final CommentService commentServiceImpl = context.getBean("commentServiceImpl", CommentService.class);
     }

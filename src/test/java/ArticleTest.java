@@ -11,7 +11,7 @@ import java.util.List;
  */
 public class ArticleTest {
     @Test
-    public static void main(String[] args) {
+    public void test() {
         final ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
         final ArticleService articleServiceImpl = context.getBean("articleServiceImpl", ArticleService.class);
         final Article article = new Article(1, 1, "测试", "测试内容");

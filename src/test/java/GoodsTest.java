@@ -11,7 +11,7 @@ import java.util.List;
  */
 public class GoodsTest {
     @Test
-    public static void main(String[] args) {
+    public void test() {
         final ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
         final GoodsService goodsServiceImpl = context.getBean("goodsServiceImpl", GoodsService.class);
         //final Goods goods = new Goods(1, "法国原瓶进口红酒", 127.0, "其它", 7.5, 300,
