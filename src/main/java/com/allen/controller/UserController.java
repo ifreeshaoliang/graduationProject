@@ -35,11 +35,13 @@ public class UserController {
         final User user1 = userService.queryUserByAccountPassword(account, password);
         if (user1 == null) {
             return "loginError";
+
         }
         else {
 //            final String jwt = JWTUtil.createJWT(user.getUserID() + "", user.getUserAccount(), JWTConstant.JWT_TIME_TO_LIVE_MILLIS);
 //            response.addHeader(JWTConstant.HEADER_TOKEN, JWTConstant.HEADER_TOKEN_PREFIX+jwt);
-            return "loginSucceeded";
+            return "loginSucceed";
+
         }
     }
 
