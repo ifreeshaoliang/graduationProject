@@ -8,29 +8,19 @@ package com.allen.pojo;
 public class Goods {
     private int goodsID;
     private String goodsName;
-    private double goodsPrice;
-    private String goodsRegion;
-    private double goodsWeight;
-    private int goodsCapacity;
-    private int goodsProductionYear;
-    private String goodsStorageMethod;
-    private String goodsCategory;
-    private int goodsShelfLife;
+    private double price;
+    private String goodsUrl;
+    private String goodsImg;
 
     public Goods() {
     }
 
-    public Goods(int goodsID, String goodsName, double goodsPrice, String goodsRegion, double goodsWeight, int goodsCapacity, int goodsProductionYear, String goodsStorageMethod, String goodsCategory, int goodsShelfLife) {
+    public Goods(int goodsID, String goodsName, double price, String goodsUrl, String goodsImg) {
         this.goodsID = goodsID;
         this.goodsName = goodsName;
-        this.goodsPrice = goodsPrice;
-        this.goodsRegion = goodsRegion;
-        this.goodsWeight = goodsWeight;
-        this.goodsCapacity = goodsCapacity;
-        this.goodsProductionYear = goodsProductionYear;
-        this.goodsStorageMethod = goodsStorageMethod;
-        this.goodsCategory = goodsCategory;
-        this.goodsShelfLife = goodsShelfLife;
+        this.price = price;
+        this.goodsUrl = goodsUrl;
+        this.goodsImg = goodsImg;
     }
 
     public int getGoodsID() {
@@ -49,68 +39,28 @@ public class Goods {
         this.goodsName = goodsName;
     }
 
-    public double getGoodsPrice() {
-        return goodsPrice;
+    public double getPrice() {
+        return price;
     }
 
-    public void setGoodsPrice(double goodsPrice) {
-        this.goodsPrice = goodsPrice;
+    public void setPrice(double price) {
+        this.price = price;
     }
 
-    public String getGoodsRegion() {
-        return goodsRegion;
+    public String getGoodsUrl() {
+        return goodsUrl;
     }
 
-    public void setGoodsRegion(String goodsRegion) {
-        this.goodsRegion = goodsRegion;
+    public void setGoodsUrl(String goodsUrl) {
+        this.goodsUrl = goodsUrl;
     }
 
-    public double getGoodsWeight() {
-        return goodsWeight;
+    public String getGoodsImg() {
+        return goodsImg;
     }
 
-    public void setGoodsWeight(double goodsWeight) {
-        this.goodsWeight = goodsWeight;
-    }
-
-    public int getGoodsCapacity() {
-        return goodsCapacity;
-    }
-
-    public void setGoodsCapacity(int goodsCapacity) {
-        this.goodsCapacity = goodsCapacity;
-    }
-
-    public int getGoodsProductionYear() {
-        return goodsProductionYear;
-    }
-
-    public void setGoodsProductionYear(int goodsProductionYear) {
-        this.goodsProductionYear = goodsProductionYear;
-    }
-
-    public String getGoodsStorageMethod() {
-        return goodsStorageMethod;
-    }
-
-    public void setGoodsStorageMethod(String goodsStorageMethod) {
-        this.goodsStorageMethod = goodsStorageMethod;
-    }
-
-    public String getGoodsCategory() {
-        return goodsCategory;
-    }
-
-    public void setGoodsCategory(String goodsCategory) {
-        this.goodsCategory = goodsCategory;
-    }
-
-    public int getGoodsShelfLife() {
-        return goodsShelfLife;
-    }
-
-    public void setGoodsShelfLife(int goodsShelfLife) {
-        this.goodsShelfLife = goodsShelfLife;
+    public void setGoodsImg(String goodsImg) {
+        this.goodsImg = goodsImg;
     }
 
     @Override
@@ -118,14 +68,9 @@ public class Goods {
         return "Goods{" +
                 "goodsID=" + goodsID +
                 ", goodsName='" + goodsName + '\'' +
-                ", goodsPrice=" + goodsPrice +
-                ", goodsRegion='" + goodsRegion + '\'' +
-                ", goodsWeight=" + goodsWeight +
-                ", goodsCapacity=" + goodsCapacity +
-                ", goodsProductionYear=" + goodsProductionYear +
-                ", goodsStorageMethod='" + goodsStorageMethod + '\'' +
-                ", goodsCategory='" + goodsCategory + '\'' +
-                ", goodsShelfLife=" + goodsShelfLife +
+                ", price=" + price +
+                ", goodsUrl='" + goodsUrl + '\'' +
+                ", goodsImg='" + goodsImg + '\'' +
                 '}';
     }
 }

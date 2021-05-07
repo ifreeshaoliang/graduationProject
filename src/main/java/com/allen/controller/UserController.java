@@ -9,13 +9,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletResponse;
-import java.util.List;
 
 /**
  * @author ifree
  */
-@CrossOrigin(origins = "http://localhost:8081", maxAge = 3600)
+@CrossOrigin(origins = "http://localhost:8081/#/", maxAge = 3600)
 @RestController
+@RequestMapping("/user")
 public class UserController {
     private UserServiceImpl userService;
 
@@ -25,22 +25,40 @@ public class UserController {
     }
 
 
-    @RequestMapping("/user")
+    @RequestMapping("/getAllUserInfo")
     String user() {
         return JSON.toJSONString(userService.queryAllUser());
     }
 
-    @PostMapping("/user/login/{user}")
-    String userLogin(@PathVariable("user") User user, HttpServletResponse response) throws Exception {
-        final User user1 = userService.queryUserByAccountPassword(user.getUserAccount(), user.getUserPassword());
+    @PostMapping("/login/{account}/{password}")
+    String userLogin(@PathVariable("account") String account, @PathVariable("password") String password, HttpServletResponse response) throws Exception {
+        final User user1 = userService.queryUserByAccountPassword(account, password);
         if (user1 == null) {
             return "loginError";
         }
         else {
-            final String jwt = JWTUtil.createJWT(user.getUserID() + "", user.getUserAccount(), JWTConstant.JWT_TIME_TO_LIVE_MILLIS);
-            response.addHeader(JWTConstant.HEADER_TOKEN, JWTConstant.HEADER_TOKEN_PREFIX+jwt);
+//            final String jwt = JWTUtil.createJWT(user.getUserID() + "", user.getUserAccount(), JWTConstant.JWT_TIME_TO_LIVE_MILLIS);
+//            response.addHeader(JWTConstant.HEADER_TOKEN, JWTConstant.HEADER_TOKEN_PREFIX+jwt);
             return "loginSucceeded";
         }
+    }
+
+    @GetMapping("/register/{user}")
+    String userRegister(@PathVariable("user") User user, HttpServletResponse response) throws Exception {
+        int res = userService.addUser(user);
+        if (res > 0) {
+            return "registerSucceeded";
+        }
+        else {
+//            final String jwt = JWTUtil.createJWT(user.getUserID() + "", user.getUserAccount(), JWTConstant.JWT_TIME_TO_LIVE_MILLIS);
+//            response.addHeader(JWTConstant.HEADER_TOKEN, JWTConstant.HEADER_TOKEN_PREFIX+jwt);
+            return "registerFailed";
+        }
+    }
+
+    @GetMapping("/test/{number}")
+    String userTest(@PathVariable("number") int num, HttpServletResponse response) throws Exception {
+       return "" + num;
     }
 
 }

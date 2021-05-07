@@ -6,15 +6,19 @@ package com.allen.pojo;
 
 public class Comment {
     private int commentID;
+    private int articleID;
     private int commentUserID;
+    private int commentToUserID;
     private String commentContext;
 
     public Comment() {
     }
 
-    public Comment(int commentID, int commentUserID, String commentContext) {
+    public Comment(int commentID, int articleID, int commentUserID, int commentToUserID, String commentContext) {
         this.commentID = commentID;
+        this.articleID = articleID;
         this.commentUserID = commentUserID;
+        this.commentToUserID = commentToUserID;
         this.commentContext = commentContext;
     }
 
@@ -26,12 +30,28 @@ public class Comment {
         this.commentID = commentID;
     }
 
+    public int getArticleID() {
+        return articleID;
+    }
+
+    public void setArticleID(int articleID) {
+        this.articleID = articleID;
+    }
+
     public int getCommentUserID() {
         return commentUserID;
     }
 
     public void setCommentUserID(int commentUserID) {
         this.commentUserID = commentUserID;
+    }
+
+    public int getCommentToUserID() {
+        return commentToUserID;
+    }
+
+    public void setCommentToUserID(int commentToUserID) {
+        this.commentToUserID = commentToUserID;
     }
 
     public String getCommentContext() {
@@ -46,7 +66,9 @@ public class Comment {
     public String toString() {
         return "Comment{" +
                 "commentID=" + commentID +
+                ", articleID=" + articleID +
                 ", commentUserID=" + commentUserID +
+                ", commentToUserID=" + commentToUserID +
                 ", commentContext='" + commentContext + '\'' +
                 '}';
     }

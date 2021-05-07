@@ -24,11 +24,11 @@ public class UserDaoTest {
 //        userServiceImpl.deleteUser(2);
 //        System.out.println(userServiceImpl.queryUserByID(2));
 
-        userServiceImpl.deleteUser(5);
-        List<User> users = userServiceImpl.queryAllUser();
-        for (User user : users) {
-            System.out.println(user);
-        }
+//        userServiceImpl.deleteUser(5);
+//        List<User> users = userServiceImpl.queryAllUser();
+//        for (User user : users) {
+//            System.out.println(user);
+//        }
 
 //
     }

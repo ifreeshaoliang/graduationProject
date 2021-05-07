@@ -14,13 +14,13 @@ public class ArticleTest {
     public void test() {
         final ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
         final ArticleService articleServiceImpl = context.getBean("articleServiceImpl", ArticleService.class);
-        final Article article = new Article(1, 1, "测试", "测试内容");
-        articleServiceImpl.addArticle(article);
-        System.out.println(articleServiceImpl.queryArticleByID(3));
-        articleServiceImpl.deleteArticle(2);
-        final List<Article> articles = articleServiceImpl.queryAllArticle();
-        for (Article article1 : articles) {
-            System.out.println(article1);
-        }
+//        final Article article = new Article(1, 1, "测试", "测试内容");
+//        articleServiceImpl.addArticle(article);
+//        System.out.println(articleServiceImpl.queryArticleByID(3));
+//        articleServiceImpl.deleteArticle(2);
+//        final List<Article> articles = articleServiceImpl.queryAllArticle();
+//        for (Article article1 : articles) {
+//            System.out.println(article1);
+//        }
     }
 }

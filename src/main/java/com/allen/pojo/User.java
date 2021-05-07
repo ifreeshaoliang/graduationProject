@@ -10,17 +10,19 @@ public class User {
     private String userAccount;
     private String userPassword;
     private String sex;
+    private String userImg;
     private int authority;
 
     public User() {
     }
 
-    public User(int userID, String userName, String userAccount, String userPassword, String sex, int authority) {
+    public User(int userID, String userName, String userAccount, String userPassword, String sex, String userImg, int authority) {
         this.userID = userID;
         this.userName = userName;
         this.userAccount = userAccount;
         this.userPassword = userPassword;
         this.sex = sex;
+        this.userImg = userImg;
         this.authority = authority;
     }
 
@@ -64,6 +66,14 @@ public class User {
         this.sex = sex;
     }
 
+    public String getUserImg() {
+        return userImg;
+    }
+
+    public void setUserImg(String userImg) {
+        this.userImg = userImg;
+    }
+
     public int getAuthority() {
         return authority;
     }
@@ -80,6 +90,7 @@ public class User {
                 ", userAccount='" + userAccount + '\'' +
                 ", userPassword='" + userPassword + '\'' +
                 ", sex='" + sex + '\'' +
+                ", userImg='" + userImg + '\'' +
                 ", authority=" + authority +
                 '}';
     }
